@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jordan\\task-harbor\\WebAPI\\WebAPI.csproj": {}
+    "C:\\Users\\Jordan\\task-harbor\\webAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jordan\\task-harbor\\WebAPI\\WebAPI.csproj": {
+    "C:\\Users\\Jordan\\task-harbor\\webAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jordan\\task-harbor\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Jordan\\task-harbor\\webAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Users\\Jordan\\task-harbor\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\Users\\Jordan\\task-harbor\\webAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\Jordan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jordan\\task-harbor\\WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\Jordan\\task-harbor\\webAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
