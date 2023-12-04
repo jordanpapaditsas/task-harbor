@@ -1,8 +1,8 @@
-export class Plan {
+export class PlanDto {
   id!: string;
   name!: string;
-  SerialNumber!: number;
-  createdDate!: string | Date | number;
+  serialNumber!: number;
+  createdDate!: string | number | Date;
   description!: string;
   notes?: string;
 }
