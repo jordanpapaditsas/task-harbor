@@ -1,0 +1,57 @@
+.user-logged {
+  color: white;
+}
+
+::ng-deep .main-toolbar {
+  background-color: #504c94;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+::ng-deep .user-prof {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+::ng-deep .dropdown-container {
+  background: none;
+  border: none;
+  margin-right: 1rem;
+  padding: .8rem;
+}
+
+::ng-deep .dropdown-container .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight) {
+  background-color: #504c94;
+  padding: .8rem;
+  margin-right: 1rem;
+}
+
+::ng-deep .dropdown-container .p-dropdown-panel .p-dropdown-items .p-dropdown-item:hover {
+  background-color: white;
+  color: black;
+}
+
+::ng-deep .p-dropdown-label	{
+  display: none;
+}
+
+::ng-deep .p-dropdown-item{
+  padding: .8rem;
+  margin-right: 1rem;
+  color: white;
+  background-color: #504c94;
+}
+
+::ng-deep .p-dropdown-panel {
+  padding: .8rem;
+  margin-right: 1rem;
+  background-color: #504c94;
+}
+
+::ng-deep .p-dropdown {
+  background-color: #504c94;
+}
+
+

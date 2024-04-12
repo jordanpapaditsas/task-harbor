@@ -1,0 +1,26 @@
+<p-toolbar styleClass="main-toolbar">
+  <img
+    (click)="onLogoClick($event)"
+    [src]="taskHarborLogo"
+  />
+
+  <div class="user-prof">
+    <span class="user-logged">Hello, Jordan</span>
+    <p-dropdown
+    [options]="avatarItems"
+    [(ngModel)]="selectedAvatarItem"
+    (onChange)="onChangeClick($event)"
+    styleClass="dropdown-container"
+  >
+    <ng-template pTemplate="dropdownicon">
+      <p-avatar
+        styleClass="avatar-icon"
+        shape="circle"
+        [image]="profileAvatar"
+        size="large"
+      >
+      </p-avatar>
+    </ng-template>
+  </p-dropdown>
+  </div>
+</p-toolbar>

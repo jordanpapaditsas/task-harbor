@@ -1,0 +1,60 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+::ng-deep .p-sidebar {
+  background-color: rgb(185, 181, 181);
+}
+
+::ng-deep .sidebar-btn {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+::ng-deep .bground-color {
+  background-color: #4fafe2;
+  border: none;
+}
+::ng-deep .bground-color:hover {
+  background-color: #628faa;
+  border: none;
+}
+::ng-deep .round {
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+::ng-deep .p-treenode {
+  background-color: rgb(185, 181, 181);
+  border: none;
+  color: white;
+
+}
+
+::ng-deep .p-treenode-icon {
+  margin-right: .5rem;
+  color: white;
+}
+
+.menu-nav {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+::ng-deep .menu-tree {
+  border: none;
+}
+
+::ng-deep .margin-right {
+  margin-right: 1rem;
+}

@@ -1,0 +1,26 @@
+<p-sidebar #sidebarRef [(visible)]="isSidebarVisible">
+  <ng-template pTemplate="headless">
+    <div class="flex-container">
+      <div class="flex-logo">
+        <img [src]="taskHarborLogo" alt="Task Harbor">
+        <span>
+          <p-button
+            type="button"
+            (click)="closeSideBar($event)"
+            icon="pi pi-times"
+            styleClass="margin-right bground-color round"
+          ></p-button>
+        </span>
+      </div>
+      <hr />
+
+      <div class="menu-nav">
+        <p-tree styleClass="menu-tree" (click)="onMenuItemCLick($event)" [value]="navItems"></p-tree>
+        <hr />
+        <p-tree styleClass="menu-tree" (click)="onMenuItemCLick($event)" [value]="navItemsSecondMenu"></p-tree>
+      </div>
+
+    </div>
+  </ng-template>
+</p-sidebar>
+<p-button styleClass="margin-right bground-color round sidebar-btn" (click)="isSidebarVisible = true" icon="pi pi-arrow-right"></p-button>
