@@ -23,8 +23,7 @@ export class TaskNotesEditComponent implements OnInit {
   taskNotesViewModel: TaskNotesViewModel;
 
   private _taskNoteId!: any;
-
-
+  // TODO Fix Input for tasknoteid
 
   constructor(
     private http: HttpClient,

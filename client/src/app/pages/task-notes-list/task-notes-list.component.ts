@@ -49,6 +49,8 @@ export class TaskNotesListComponent implements OnInit {
     private router: Router
   ) {
     this.taskNotesViewModel = new TaskNotesViewModel(this.http, this.appInfo);
+
+    this.taskNote = new TaskNotesDto();
   }
 
   ngOnInit() {
@@ -66,7 +68,9 @@ export class TaskNotesListComponent implements OnInit {
   }
 
   onRowSelect(e: any) {
+    debugger;
     if (e.data.Id) {
+      this.taskNote.Id = e.data.Id;
       this.isTaskEditOpen = true;
       this.router.navigate(['tasknotes-edit']);
     }
