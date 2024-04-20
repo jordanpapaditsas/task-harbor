@@ -35,9 +35,12 @@ export class TaskNotesListComponent implements OnInit {
   taskNotes!: TaskNotesDto[];
   taskNote!: TaskNotesDto;
 
-  constructor(private http: HttpClient, private appInfo: AppInfoService, private router: Router) {
+  constructor(
+    private http: HttpClient,
+    private appInfo: AppInfoService,
+    private router: Router
+  ) {
     this.taskNotesViewModel = new TaskNotesViewModel(this.http, this.appInfo);
-
   }
 
   ngOnInit() {
@@ -51,7 +54,6 @@ export class TaskNotesListComponent implements OnInit {
 
         console.log(this.taskNotes);
       });
-
     }
   }
 
