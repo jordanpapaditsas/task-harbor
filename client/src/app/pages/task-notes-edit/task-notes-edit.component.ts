@@ -45,6 +45,5 @@ export class TaskNotesEditComponent implements OnInit {
 
         this.router.navigate(['tasknotes-list']);
       });
-
   }
 }

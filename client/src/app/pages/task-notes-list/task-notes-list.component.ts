@@ -74,7 +74,6 @@ export class TaskNotesListComponent implements OnInit {
       this.isTaskEditOpen = true;
       this.router.navigate(['tasknotes-edit']);
     }
-
   }
 
   onRowUnselect(e: any) {}

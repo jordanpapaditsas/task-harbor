@@ -16,7 +16,13 @@
     </ng-template>
   </p-toolbar>
 
-  <p-table [value]="taskNotes" selectionMode="single" [(selection)]="selectedTaskNote" dataKey="Id" (onRowSelect)="onRowSelect($event)">
+  <p-table
+    [value]="taskNotes"
+    selectionMode="single"
+    [(selection)]="selectedTaskNote"
+    dataKey="Id"
+    (onRowSelect)="onRowSelect($event)"
+  >
     <ng-template pTemplate="header">
       <tr>
         <th>Id</th>
@@ -34,7 +40,4 @@
   </p-table>
 </div>
 
-<app-task-notes-edit
-  *ngIf="isTaskEditOpen"
-
-></app-task-notes-edit>
+<app-task-notes-edit *ngIf="isTaskEditOpen"></app-task-notes-edit>
