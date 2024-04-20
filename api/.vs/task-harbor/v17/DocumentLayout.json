@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Jordan\\task-harbor\\api\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{717D193E-E5AE-45BD-8CAC-D72371EBD02A}|task-harbor-API.csproj|c:\\users\\jordan\\task-harbor\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{717D193E-E5AE-45BD-8CAC-D72371EBD02A}|task-harbor-API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{717D193E-E5AE-45BD-8CAC-D72371EBD02A}|task-harbor-API.csproj|c:\\users\\jordan\\task-harbor\\api\\dto\\tasknotedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{717D193E-E5AE-45BD-8CAC-D72371EBD02A}|task-harbor-API.csproj|solutionrelative:dto\\tasknotedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{717D193E-E5AE-45BD-8CAC-D72371EBD02A}|task-harbor-API.csproj|c:\\users\\jordan\\task-harbor\\api\\controllers\\tasknotescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{717D193E-E5AE-45BD-8CAC-D72371EBD02A}|task-harbor-API.csproj|solutionrelative:controllers\\tasknotescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -27,12 +35,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Jordan\\task-harbor\\api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Jordan\\task-harbor\\api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T13:42:03.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TaskNoteDto.cs",
+              "DocumentMoniker": "C:\\Users\\Jordan\\task-harbor\\api\\Dto\\TaskNoteDto.cs",
+              "RelativeDocumentMoniker": "Dto\\TaskNoteDto.cs",
+              "ToolTip": "C:\\Users\\Jordan\\task-harbor\\api\\Dto\\TaskNoteDto.cs",
+              "RelativeToolTip": "Dto\\TaskNoteDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T13:25:02.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "TaskNotesController.cs",
               "DocumentMoniker": "C:\\Users\\Jordan\\task-harbor\\api\\Controllers\\TaskNotesController.cs",
               "RelativeDocumentMoniker": "Controllers\\TaskNotesController.cs",
               "ToolTip": "C:\\Users\\Jordan\\task-harbor\\api\\Controllers\\TaskNotesController.cs",
               "RelativeToolTip": "Controllers\\TaskNotesController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAAIAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABsAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-20T12:07:39.355Z",
               "EditorCaption": ""

@@ -37,6 +37,8 @@ export class TaskNotesEditComponent implements OnInit {
       .addNewTaskNote(this.taskNote)
       .subscribe((result: any) => {
         this.taskNote = result;
+
+        console.log(this.taskNote);
       });
     this.router.navigate(['tasknotes-list']);
   }
