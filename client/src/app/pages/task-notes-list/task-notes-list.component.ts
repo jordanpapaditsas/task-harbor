@@ -32,7 +32,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 export class TaskNotesListComponent implements OnInit {
   taskNotesViewModel!: TaskNotesViewModel;
 
-  taskNotes!: any[];
+  taskNotes!: TaskNotesDto[];
   taskNote!: TaskNotesDto;
 
   constructor(private http: HttpClient, private appInfo: AppInfoService, private router: Router) {
