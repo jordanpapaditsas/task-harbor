@@ -45,7 +45,6 @@ export class TaskNotesListComponent implements OnInit {
   }
 
   getAllTaskNotesData() {
-    debugger;
     if (this.appInfo.options) {
       this.taskNotesViewModel.getAllTaskNotes().subscribe((result: any) => {
         this.taskNotes = result;
