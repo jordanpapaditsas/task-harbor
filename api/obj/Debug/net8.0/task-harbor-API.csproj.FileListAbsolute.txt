@@ -270,3 +270,4 @@ C:\Users\Jordan\task-harbor\api\obj\Debug\net8.0\refint\task-harbor-API.dll
 C:\Users\Jordan\task-harbor\api\obj\Debug\net8.0\task-harbor-API.pdb
 C:\Users\Jordan\task-harbor\api\obj\Debug\net8.0\task-harbor-API.genruntimeconfig.cache
 C:\Users\Jordan\task-harbor\api\obj\Debug\net8.0\ref\task-harbor-API.dll
+C:\Users\Jordan\task-harbor\api\obj\Debug\net8.0\task-harbor-API.sourcelink.json

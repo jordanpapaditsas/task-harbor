@@ -24,6 +24,14 @@
   color: black;
 }
 
+.linkedin-icon {
+  color: rgb(73, 120, 207);
+}
+
+.linkedin-icon:hover {
+  color: rgb(109, 145, 212);
+}
+
 .github-icon:hover {
   color: rgb(59, 57, 57);
 }
