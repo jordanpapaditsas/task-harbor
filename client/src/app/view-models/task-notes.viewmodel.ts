@@ -7,7 +7,6 @@ export class TaskNotesViewModel {
   constructor(private http: HttpClient, private appInfo: AppInfoService) {}
 
   public getAllTaskNotes() {
-    debugger;
     let headers = {
       'Content-Type': 'application/json',
     };

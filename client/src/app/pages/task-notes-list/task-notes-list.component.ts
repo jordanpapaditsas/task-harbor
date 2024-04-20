@@ -12,6 +12,8 @@ import { SideNavigationComponent } from '../../layout/side-navigation/side-navig
 import { FooterComponent } from '../../layout/footer/footer.component';
 import { TableModule } from 'primeng/table';
 import { ToolbarModule } from 'primeng/toolbar';
+import { TaskNotesEditComponent } from '../task-notes-edit/task-notes-edit.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-task-notes-list',
@@ -25,6 +27,8 @@ import { ToolbarModule } from 'primeng/toolbar';
     FooterComponent,
     TableModule,
     ToolbarModule,
+    TaskNotesEditComponent,
+    CommonModule,
   ],
   templateUrl: './task-notes-list.component.html',
   styleUrls: ['./task-notes-list.component.css'],
@@ -34,6 +38,10 @@ export class TaskNotesListComponent implements OnInit {
 
   taskNotes!: TaskNotesDto[];
   taskNote!: TaskNotesDto;
+
+  selectedTaskNote!: TaskNotesDto;
+
+  isTaskEditOpen: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -57,9 +65,15 @@ export class TaskNotesListComponent implements OnInit {
     }
   }
 
-  onRowSelect(event: any) {}
+  onRowSelect(e: any) {
+    if (e.data.Id) {
+      this.isTaskEditOpen = true;
+      this.router.navigate(['tasknotes-edit']);
+    }
 
-  onRowUnselect(event: any) {}
+  }
+
+  onRowUnselect(e: any) {}
 
   addNewTask(e: any) {
     this.router.navigate(['tasknotes-edit']);
