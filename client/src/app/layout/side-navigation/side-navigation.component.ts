@@ -73,12 +73,12 @@ export class SideNavigationComponent implements OnInit {
   }
 
   onMenuItemCLick(e: any) {
-    debugger;
     if (e.target.firstChild.data === 'Home') {
       this.router.navigate(['home']);
       this.closeSideBar(e);
     } else if (e.target.firstChild.data === 'Tasks') {
       this.router.navigate(['tasknotes-list']);
+      this.closeSideBar(e);
     } else if (e.target.firstChild.data === 'Calendar') {
       this.router.navigate(['calendar']);
     }

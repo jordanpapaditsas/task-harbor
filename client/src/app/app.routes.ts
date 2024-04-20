@@ -12,7 +12,7 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {

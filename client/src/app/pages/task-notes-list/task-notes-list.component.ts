@@ -7,31 +7,61 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+import { NavbarComponent } from '../../layout/navbar/navbar.component';
+import { SideNavigationComponent } from '../../layout/side-navigation/side-navigation.component';
+import { FooterComponent } from '../../layout/footer/footer.component';
+import { TableModule } from 'primeng/table';
+import { ToolbarModule } from 'primeng/toolbar';
 
 @Component({
   selector: 'app-task-notes-list',
   standalone: true,
-  imports: [FormsModule, CardModule, ButtonModule],
+  imports: [
+    FormsModule,
+    CardModule,
+    ButtonModule,
+    NavbarComponent,
+    SideNavigationComponent,
+    FooterComponent,
+    TableModule,
+    ToolbarModule,
+  ],
   templateUrl: './task-notes-list.component.html',
   styleUrls: ['./task-notes-list.component.css'],
 })
 export class TaskNotesListComponent implements OnInit {
   taskNotesViewModel!: TaskNotesViewModel;
+
+  taskNotes!: any[];
   taskNote!: TaskNotesDto;
 
-  constructor() {
+  constructor(private http: HttpClient, private appInfo: AppInfoService, private router: Router) {
+    this.taskNotesViewModel = new TaskNotesViewModel(this.http, this.appInfo);
 
+    this.taskNotes = [];
   }
 
   ngOnInit() {
-
+    debugger;
+    this.getAllTaskNotesData();
   }
 
-  addNewTask(e: any) {
-    this.taskNotesViewModel
-      .addNewTaskNote(this.taskNote)
-      .subscribe((result: any) => {
-        this.taskNote = result;
+  getAllTaskNotesData() {
+    debugger;
+    if (this.appInfo.options) {
+      this.taskNotesViewModel.getAllTaskNotes().subscribe((result: any) => {
+        this.taskNotes = result;
+
+        console.log(this.taskNotes);
       });
+    }
+  }
+
+  onRowSelect(event: any) {}
+
+  onRowUnselect(event: any) {}
+
+  addNewTask(e: any) {
+    this.router.navigate(['tasknotes-edit']);
   }
 }

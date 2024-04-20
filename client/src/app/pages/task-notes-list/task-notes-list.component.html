@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<app-side-navigation></app-side-navigation>
+<app-footer></app-footer>
+
+<div class="task-list-container">
+  <p-toolbar styleClass="table-toolbar">
+    <ng-template pTemplate="left">
+        <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" (click)="addNewTask($event)"></button>
+    </ng-template>
+</p-toolbar>
+
+<p-table [value]="taskNotes"
+    (onRowSelect)="onRowSelect($event)">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>SerialNumber</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-task>
+        <tr>
+            <td>{{task.Id}}</td>
+            <td>{{task.Name}}</td>
+            <td>{{task.SerialNumber}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>

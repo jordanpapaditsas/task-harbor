@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Jordan\\task-harbor\\api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{717D193E-E5AE-45BD-8CAC-D72371EBD02A}|task-harbor-API.csproj|c:\\users\\jordan\\task-harbor\\api\\models\\tasknote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{717D193E-E5AE-45BD-8CAC-D72371EBD02A}|task-harbor-API.csproj|solutionrelative:models\\tasknote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{717D193E-E5AE-45BD-8CAC-D72371EBD02A}|task-harbor-API.csproj|c:\\users\\jordan\\task-harbor\\api\\controllers\\tasknotescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{717D193E-E5AE-45BD-8CAC-D72371EBD02A}|task-harbor-API.csproj|solutionrelative:controllers\\tasknotescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TaskNote.cs",
-              "DocumentMoniker": "C:\\Users\\Jordan\\task-harbor\\api\\Models\\TaskNote.cs",
-              "RelativeDocumentMoniker": "Models\\TaskNote.cs",
-              "ToolTip": "C:\\Users\\Jordan\\task-harbor\\api\\Models\\TaskNote.cs",
-              "RelativeToolTip": "Models\\TaskNote.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAJAAAA",
+              "Title": "TaskNotesController.cs",
+              "DocumentMoniker": "C:\\Users\\Jordan\\task-harbor\\api\\Controllers\\TaskNotesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TaskNotesController.cs",
+              "ToolTip": "C:\\Users\\Jordan\\task-harbor\\api\\Controllers\\TaskNotesController.cs",
+              "RelativeToolTip": "Controllers\\TaskNotesController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T18:53:40.34Z",
+              "WhenOpened": "2024-04-20T12:07:39.355Z",
               "EditorCaption": ""
             }
           ]
