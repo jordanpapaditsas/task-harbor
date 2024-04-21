@@ -38,10 +38,7 @@ export class TaskNotesListComponent implements OnInit {
 
   taskNotes!: TaskNotesDto[];
   taskNote!: TaskNotesDto;
-
   selectedTaskNote!: TaskNotesDto;
-
-  isTaskEditOpen: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -62,16 +59,15 @@ export class TaskNotesListComponent implements OnInit {
       this.taskNotesViewModel.getAllTaskNotes().subscribe((result: any) => {
         this.taskNotes = result;
 
-        console.log(this.taskNotes);
       });
     }
   }
 
   onRowSelect(e: any) {
     if (e.data.Id) {
-      this.taskNote.Id = e.data.Id;
-      this.isTaskEditOpen = true;
-      this.router.navigate(['tasknotes-edit', this.taskNote.Id]);
+      const taskNoteId = e.data.Id;
+
+      this.router.navigate(['tasknotes-edit', taskNoteId]);
     }
   }
 

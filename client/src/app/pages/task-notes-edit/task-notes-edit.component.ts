@@ -9,6 +9,7 @@ import { TaskNotesViewModel } from '../../view-models/task-notes.viewmodel';
 import { ButtonModule } from 'primeng/button';
 import { Guid } from 'guid-typescript';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-task-notes-edit',
@@ -19,6 +20,7 @@ import { CommonModule } from '@angular/common';
 })
 export class TaskNotesEditComponent implements OnInit {
   taskNote!: TaskNotesDto;
+  taskNotes!: TaskNotesDto[];
 
   taskNotesViewModel: TaskNotesViewModel;
 
@@ -37,6 +39,10 @@ export class TaskNotesEditComponent implements OnInit {
         .getTaskNoteById(this._taskNoteId)
         .subscribe((result: any) => {
           this.taskNote = result as any;
+
+          this.taskNote.Id = result.Id;
+          this.taskNote.Name = result.Name;
+          this.taskNote.SerialNumber = result.SerialNumber;
         });
     }
   }
@@ -44,14 +50,29 @@ export class TaskNotesEditComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private appInfo: AppInfoService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.taskNotesViewModel = new TaskNotesViewModel(this.http, this.appInfo);
 
     this.taskNote = new TaskNotesDto();
+    this.taskNotes = new Array<TaskNotesDto>();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.paramMap.subscribe((params) => {
+      const id = params.get('id');
+      if (id && this.appInfo.options) {
+        this._taskNoteId = Guid.parse(id);
+
+        this.taskNotesViewModel
+          .getTaskNoteById(this._taskNoteId)
+          .subscribe((result: any) => {
+            this.taskNote = result;
+          });
+      }
+    });
+  }
 
   addNewTask(e: any) {
     this.taskNotesViewModel
