@@ -22,9 +22,9 @@ export class TaskNotesEditComponent implements OnInit {
   taskNote!: TaskNotesDto;
   taskNotes!: TaskNotesDto[];
 
-  taskNotesViewModel: TaskNotesViewModel;
-
   _taskNoteId!: Guid;
+
+  taskNotesViewModel: TaskNotesViewModel;
 
   public get taskNoteId(): Guid {
     return this._taskNoteId;

@@ -34,11 +34,11 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./task-notes-list.component.css'],
 })
 export class TaskNotesListComponent implements OnInit {
-  taskNotesViewModel!: TaskNotesViewModel;
-
   taskNotes!: TaskNotesDto[];
   taskNote!: TaskNotesDto;
   selectedTaskNote!: TaskNotesDto;
+
+  taskNotesViewModel!: TaskNotesViewModel;
 
   constructor(
     private http: HttpClient,
@@ -58,7 +58,6 @@ export class TaskNotesListComponent implements OnInit {
     if (this.appInfo.options) {
       this.taskNotesViewModel.getAllTaskNotes().subscribe((result: any) => {
         this.taskNotes = result;
-
       });
     }
   }
