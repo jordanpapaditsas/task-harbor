@@ -40,4 +40,7 @@
   </p-table>
 </div>
 
-<app-task-notes-edit *ngIf="isTaskEditOpen"></app-task-notes-edit>
+<app-task-notes-edit
+  *ngIf="isTaskEditOpen"
+  [taskNoteId]="taskNote.Id"
+></app-task-notes-edit>

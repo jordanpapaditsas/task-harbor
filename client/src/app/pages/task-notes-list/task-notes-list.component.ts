@@ -68,11 +68,10 @@ export class TaskNotesListComponent implements OnInit {
   }
 
   onRowSelect(e: any) {
-    debugger;
     if (e.data.Id) {
       this.taskNote.Id = e.data.Id;
       this.isTaskEditOpen = true;
-      this.router.navigate(['tasknotes-edit']);
+      this.router.navigate(['tasknotes-edit', this.taskNote.Id]);
     }
   }
 

@@ -22,8 +22,24 @@ export class TaskNotesEditComponent implements OnInit {
 
   taskNotesViewModel: TaskNotesViewModel;
 
-  private _taskNoteId!: any;
-  // TODO Fix Input for tasknoteid
+  _taskNoteId!: Guid;
+
+  public get taskNoteId(): Guid {
+    return this._taskNoteId;
+  }
+
+  @Input('taskNoteId')
+  public set taskNoteId(value: Guid) {
+    this._taskNoteId = value;
+
+    if (this._taskNoteId) {
+      this.taskNotesViewModel
+        .getTaskNoteById(this._taskNoteId)
+        .subscribe((result: any) => {
+          this.taskNote = result as any;
+        });
+    }
+  }
 
   constructor(
     private http: HttpClient,

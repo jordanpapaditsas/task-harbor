@@ -44,7 +44,7 @@ export const routes: Routes = [
     component: TaskNotesListComponent,
   },
   {
-    path: 'tasknotes-edit',
+    path: 'tasknotes-edit/:id',
     component: TaskNotesEditComponent,
   },
 ];

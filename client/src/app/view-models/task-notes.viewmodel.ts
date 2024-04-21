@@ -25,7 +25,7 @@ export class TaskNotesViewModel {
 
     let serviceUrl = this.appInfo.getService() + 'TaskNotes';
 
-    return this.http.get(serviceUrl + '/getAllTaskNotes/' + taskNoteId, {
+    return this.http.get(serviceUrl + '/getTaskNoteById/' + taskNoteId, {
       headers: headers,
     });
   }

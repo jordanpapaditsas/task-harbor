@@ -31,14 +31,21 @@ namespace task_harbor.Controllers
         [HttpGet("getTaskNoteById/{id}")]
         public async Task<IActionResult> GetTaskNoteWithId(Guid id)
         { 
-            var taskNote = await _context.TaskNotes.SingleOrDefaultAsync(x => x.Id == id);
+            var taskNote = await _context.TaskNotes.Where(x => x.Id == id).FirstOrDefaultAsync();
 
             if (taskNote == null)
             {
                 return BadRequest("Task not found.");
             }
+
+            var taskNoteDto = new TaskNoteDto
+            {
+                Id = taskNote.Id,
+                Name = taskNote.Name,
+                SerialNumber = taskNote.SerialNumber,
+            };
                 
-            return Ok(taskNote);
+            return Ok(taskNoteDto);
         }
         
         [HttpPost("addNewTaskNote")]
