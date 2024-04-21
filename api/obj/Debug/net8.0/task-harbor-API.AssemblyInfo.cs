@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("task-harbor-API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b7082e7f9586c42c556ac7589c72b211cf59f8d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4266d5b567422c5725890d5a5146182fe588209")]
 [assembly: System.Reflection.AssemblyProductAttribute("task-harbor-API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("task-harbor-API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
