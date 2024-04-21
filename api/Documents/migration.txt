@@ -1,5 +1,0 @@
-Instructions for Migration
-
-1. Add-Migration //Here you type your changes ex: Add-Migration AddedEndpointInTasksController
-2. Update-Database 
-3. 
