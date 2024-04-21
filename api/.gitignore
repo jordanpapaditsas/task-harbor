@@ -4,10 +4,9 @@
 
 /api/.vs/task-harbor/FileContentIndex
 /appsettings.json
-/api/.vs/
+.appsettings.json
+appsettings.json
+api/appsettings.json
 /api/.vs/task-harbor/v17/.suo
-/api/.vs/ProjectEvaluation
-/api/.vs/ProjectEvaluation/
-/api/bin
-/api/obj
-
+/api/.vs/
+/api/.vs/task-harbor/v17/.DocumentLayout.json
