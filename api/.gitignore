@@ -11,3 +11,5 @@ api/appsettings.json
 /api/.vs/
 /api/.vs/task-harbor/v17/.DocumentLayout.json
 /api/bin/
+/api/bin/Debug
+/api/obj/Debug
