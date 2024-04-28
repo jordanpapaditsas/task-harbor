@@ -3,68 +3,68 @@ import { TaskNotesDto } from '../dto/taskNotes/task-notes.dto';
 import { Guid } from 'guid-typescript';
 
 export class TaskNotesViewModel {
-  serviceUrl: string;
+  url: string;
 
   constructor(private http: HttpClient) {
-    this.serviceUrl = 'https://localhost:7028/api/';
+    this.url = 'https://localhost:7028/api/';
   }
 
   public getAllTaskNotes() {
+    let serviceUrl = this.url + 'TaskNotes';
+
     let headers = {
       'Content-Type': 'application/json',
     };
 
-    this.serviceUrl + 'TaskNotes';
-
-    return this.http.get(this.serviceUrl + '/getAllTaskNotes/', {
+    return this.http.get(serviceUrl + '/getAllTaskNotes/', {
       headers: headers,
     });
   }
 
   public getTaskNoteById(taskNoteId: Guid) {
+    let serviceUrl = this.url + 'TaskNotes';
+
     let headers = {
       'Content-Type': 'application/json',
     };
 
-    this.serviceUrl + 'TaskNotes';
-
-    return this.http.get(this.serviceUrl + '/getTaskNoteById/' + taskNoteId, {
+    return this.http.get(serviceUrl + '/getTaskNoteById/' + taskNoteId, {
       headers: headers,
     });
   }
 
   public addNewTaskNote(taskNote: TaskNotesDto) {
+    let serviceUrl = this.url + 'TaskNotes';
+
     let headers = {
       'Content-Type': 'application/json',
     };
 
-    this.serviceUrl + 'TaskNotes';
-
-    return this.http.post(this.serviceUrl + '/addNewTaskNote/', taskNote, {
+    return this.http.post(serviceUrl + '/addNewTaskNote/', taskNote, {
       headers: headers,
     });
   }
 
   public updateTaskNote(taskNote: TaskNotesDto) {
+    let serviceUrl = this.url + 'TaskNotes';
+
     let headers = {
       'Content-Type': 'application/json',
     };
 
-    this.serviceUrl + 'TaskNotes';
-
-    return this.http.post(this.serviceUrl + '/updateTaskNote/', taskNote, {
+    return this.http.post(serviceUrl + '/updateTaskNote/', taskNote, {
       headers: headers,
     });
   }
 
   public deleteTaskNoteWithId(taskNoteId: Guid) {
+    let serviceUrl = this.url + 'TaskNotes';
+
     let headers = {
       'Content-Type': 'application/json',
     };
 
-    this.serviceUrl + 'TaskNotes';
-
-    return this.http.post(this.serviceUrl + '/deleteTaskNoteWithId/', taskNoteId, {
+    return this.http.post(serviceUrl + '/deleteTaskNoteWithId/', taskNoteId, {
       headers: headers,
     });
   }

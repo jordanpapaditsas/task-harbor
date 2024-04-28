@@ -37,7 +37,7 @@ export class TaskNotesListComponent implements OnInit {
   taskNote!: TaskNotesDto;
   selectedTaskNote!: TaskNotesDto;
 
-  taskNotesViewModel!: TaskNotesViewModel;
+  taskNotesViewModel: TaskNotesViewModel;
 
   constructor(private http: HttpClient, private router: Router) {
     this.taskNotesViewModel = new TaskNotesViewModel(this.http);

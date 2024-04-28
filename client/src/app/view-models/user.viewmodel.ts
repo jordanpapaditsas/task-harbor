@@ -3,10 +3,10 @@ import { UserDto } from '../dto/users/user.dto';
 import { Guid } from 'guid-typescript';
 
 export class UserViewModel {
-  serviceUrl: string;
+  url: string;
 
   constructor(private http: HttpClient) {
-    this.serviceUrl = 'https://localhost:7028/api/';
+    this.url = 'https://localhost:7028/api/';
   }
 
   public getAllUsers() {
@@ -14,9 +14,9 @@ export class UserViewModel {
       'Content-Type': 'application/json',
     };
 
-    this.serviceUrl + 'Users';
+    let serviceUrl = this.url + 'Users';
 
-    return this.http.get(this.serviceUrl + '/getAllUsers/', {
+    return this.http.get(serviceUrl + '/getAllUsers/', {
       headers: headers,
     });
   }
@@ -26,9 +26,9 @@ export class UserViewModel {
       'Content-Type': 'application/json',
     };
 
-    this.serviceUrl + 'Users';
+    let serviceUrl = this.url + 'Users';
 
-    return this.http.get(this.serviceUrl + '/getUserById/' + userId, {
+    return this.http.get(serviceUrl + '/getUserById/' + userId, {
       headers: headers,
     });
   }
@@ -38,9 +38,9 @@ export class UserViewModel {
       'Content-Type': 'application/json',
     };
 
-    this.serviceUrl + 'Users';
+    let serviceUrl = this.url + 'Users';
 
-    return this.http.post(this.serviceUrl + '/addNewUser/', userDto, {
+    return this.http.post(serviceUrl + '/addNewUser/', userDto, {
       headers: headers,
     });
   }
@@ -50,9 +50,9 @@ export class UserViewModel {
       'Content-Type': 'application/json',
     };
 
-    this.serviceUrl + 'Users';
+    let serviceUrl = this.url + 'Users';
 
-    return this.http.put(this.serviceUrl + '/updateUser/', userDto, {
+    return this.http.put(serviceUrl + '/updateUser/', userDto, {
       headers: headers,
     });
   }
@@ -62,9 +62,9 @@ export class UserViewModel {
       'Content-Type': 'application/json',
     };
 
-    this.serviceUrl + 'Users';
+    let serviceUrl = this.url + 'Users';
 
-    return this.http.delete(this.serviceUrl + '/deleteUser/' + userId, {
+    return this.http.delete(serviceUrl + '/deleteUser/' + userId, {
       headers: headers,
     });
   }
