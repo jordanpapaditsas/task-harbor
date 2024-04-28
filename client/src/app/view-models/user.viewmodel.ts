@@ -1,19 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { UserDto } from '../dto/users/user.dto';
 import { Guid } from 'guid-typescript';
-import { AppInfoService } from '../services/app-info/app-info.service';
 
 export class UserViewModel {
-  constructor(private http: HttpClient, private appInfo: AppInfoService) {}
+  serviceUrl: string;
+
+  constructor(private http: HttpClient) {
+    this.serviceUrl = 'https://localhost:7028/api/';
+  }
 
   public getAllUsers() {
     let headers = {
       'Content-Type': 'application/json',
     };
 
-    let serviceUrl = this.appInfo.getService() + 'Users';
+    this.serviceUrl + 'Users';
 
-    return this.http.get(serviceUrl + '/getAllUsers/', {
+    return this.http.get(this.serviceUrl + '/getAllUsers/', {
       headers: headers,
     });
   }
@@ -23,9 +26,9 @@ export class UserViewModel {
       'Content-Type': 'application/json',
     };
 
-    let serviceUrl = this.appInfo.getService() + 'Users';
+    this.serviceUrl + 'Users';
 
-    return this.http.get(serviceUrl + '/getUserById/' + userId, {
+    return this.http.get(this.serviceUrl + '/getUserById/' + userId, {
       headers: headers,
     });
   }
@@ -35,9 +38,9 @@ export class UserViewModel {
       'Content-Type': 'application/json',
     };
 
-    let serviceUrl = this.appInfo.getService() + 'Users';
+    this.serviceUrl + 'Users';
 
-    return this.http.post(serviceUrl + '/addNewUser/', userDto, {
+    return this.http.post(this.serviceUrl + '/addNewUser/', userDto, {
       headers: headers,
     });
   }
@@ -47,9 +50,9 @@ export class UserViewModel {
       'Content-Type': 'application/json',
     };
 
-    let serviceUrl = this.appInfo.getService() + 'Users';
+    this.serviceUrl + 'Users';
 
-    return this.http.put(serviceUrl + '/updateUser/', userDto, {
+    return this.http.put(this.serviceUrl + '/updateUser/', userDto, {
       headers: headers,
     });
   }
@@ -59,9 +62,9 @@ export class UserViewModel {
       'Content-Type': 'application/json',
     };
 
-    let serviceUrl = this.appInfo.getService() + 'Users';
+    this.serviceUrl + 'Users';
 
-    return this.http.delete(serviceUrl + '/deleteUser/' + userId, {
+    return this.http.delete(this.serviceUrl + '/deleteUser/' + userId, {
       headers: headers,
     });
   }

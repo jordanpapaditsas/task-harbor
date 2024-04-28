@@ -1,19 +1,22 @@
 import { HttpClient } from '@angular/common/http';
-import { AppInfoService } from '../services/app-info/app-info.service';
 import { TaskNotesDto } from '../dto/taskNotes/task-notes.dto';
 import { Guid } from 'guid-typescript';
 
 export class TaskNotesViewModel {
-  constructor(private http: HttpClient, private appInfo: AppInfoService) {}
+  serviceUrl: string;
+
+  constructor(private http: HttpClient) {
+    this.serviceUrl = 'https://localhost:7028/api/';
+  }
 
   public getAllTaskNotes() {
     let headers = {
       'Content-Type': 'application/json',
     };
 
-    let serviceUrl = this.appInfo.getService() + 'TaskNotes';
+    this.serviceUrl + 'TaskNotes';
 
-    return this.http.get(serviceUrl + '/getAllTaskNotes/', {
+    return this.http.get(this.serviceUrl + '/getAllTaskNotes/', {
       headers: headers,
     });
   }
@@ -23,9 +26,9 @@ export class TaskNotesViewModel {
       'Content-Type': 'application/json',
     };
 
-    let serviceUrl = this.appInfo.getService() + 'TaskNotes';
+    this.serviceUrl + 'TaskNotes';
 
-    return this.http.get(serviceUrl + '/getTaskNoteById/' + taskNoteId, {
+    return this.http.get(this.serviceUrl + '/getTaskNoteById/' + taskNoteId, {
       headers: headers,
     });
   }
@@ -35,9 +38,9 @@ export class TaskNotesViewModel {
       'Content-Type': 'application/json',
     };
 
-    let serviceUrl = this.appInfo.getService() + 'TaskNotes';
+    this.serviceUrl + 'TaskNotes';
 
-    return this.http.post(serviceUrl + '/addNewTaskNote/', taskNote, {
+    return this.http.post(this.serviceUrl + '/addNewTaskNote/', taskNote, {
       headers: headers,
     });
   }
@@ -47,9 +50,9 @@ export class TaskNotesViewModel {
       'Content-Type': 'application/json',
     };
 
-    let serviceUrl = this.appInfo.getService() + 'TaskNotes';
+    this.serviceUrl + 'TaskNotes';
 
-    return this.http.post(serviceUrl + '/updateTaskNote/', taskNote, {
+    return this.http.post(this.serviceUrl + '/updateTaskNote/', taskNote, {
       headers: headers,
     });
   }
@@ -59,9 +62,9 @@ export class TaskNotesViewModel {
       'Content-Type': 'application/json',
     };
 
-    let serviceUrl = this.appInfo.getService() + 'TaskNotes';
+    this.serviceUrl + 'TaskNotes';
 
-    return this.http.post(serviceUrl + '/deleteTaskNoteWithId/', taskNoteId, {
+    return this.http.post(this.serviceUrl + '/deleteTaskNoteWithId/', taskNoteId, {
       headers: headers,
     });
   }

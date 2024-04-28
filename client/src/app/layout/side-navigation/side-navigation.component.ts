@@ -5,7 +5,6 @@ import { AvatarModule } from 'primeng/avatar';
 import { TreeModule } from 'primeng/tree';
 import { TreeNode } from 'primeng/api';
 import { HttpClient } from '@angular/common/http';
-import { AppInfoService } from '../../services/app-info/app-info.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -25,7 +24,6 @@ export class SideNavigationComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private appInfo: AppInfoService,
     private router: Router
   ) {
     this.taskHarborLogo = '../../../assets/images/task-harbor-original-logo.png';

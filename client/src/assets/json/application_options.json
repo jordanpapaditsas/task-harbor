@@ -1,0 +1,4 @@
+{
+  "ApplicationService": "https://localhost:7028/api/",
+  "ApplicationTitle": "Task Harbor"
+}

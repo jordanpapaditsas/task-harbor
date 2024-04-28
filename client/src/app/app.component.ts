@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
 import { UserViewModel } from './view-models/user.viewmodel';
 import { UserDto } from './dto/users/user.dto';
 import { Guid } from 'guid-typescript';
-import { AppInfoService } from './services/app-info/app-info.service';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
@@ -40,5 +39,5 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
   ],
 })
 export class AppComponent {
-  constructor(private http: HttpClient, private appInfo: AppInfoService) {}
+  constructor(private http: HttpClient) {}
 }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { TaskNotesViewModel } from '../../view-models/task-notes.viewmodel';
 import { TaskNotesDto } from '../../dto/taskNotes/task-notes.dto';
 import { HttpClient } from '@angular/common/http';
-import { AppInfoService } from '../../services/app-info/app-info.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CardModule } from 'primeng/card';
@@ -40,12 +39,8 @@ export class TaskNotesListComponent implements OnInit {
 
   taskNotesViewModel!: TaskNotesViewModel;
 
-  constructor(
-    private http: HttpClient,
-    private appInfo: AppInfoService,
-    private router: Router
-  ) {
-    this.taskNotesViewModel = new TaskNotesViewModel(this.http, this.appInfo);
+  constructor(private http: HttpClient, private router: Router) {
+    this.taskNotesViewModel = new TaskNotesViewModel(this.http);
 
     this.taskNote = new TaskNotesDto();
   }
@@ -55,11 +50,9 @@ export class TaskNotesListComponent implements OnInit {
   }
 
   getAllTaskNotesData() {
-    if (this.appInfo.options) {
-      this.taskNotesViewModel.getAllTaskNotes().subscribe((result: any) => {
-        this.taskNotes = result;
-      });
-    }
+    this.taskNotesViewModel.getAllTaskNotes().subscribe((result: any) => {
+      this.taskNotes = result;
+    });
   }
 
   onRowSelect(e: any) {

@@ -4,7 +4,6 @@ import { SideNavigationComponent } from '../../layout/side-navigation/side-navig
 import { FooterComponent } from '../../layout/footer/footer.component';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../services/auth/auth.service';
-import { AppInfoService } from '../../services/app-info/app-info.service';
 import { Router } from '@angular/router';
 import { UserDto } from '../../dto/users/user.dto';
 import { UserViewModel } from '../../view-models/user.viewmodel';
@@ -38,10 +37,9 @@ export class HomeComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private auth: AuthService,
-    private appInfo: AppInfoService,
     private router: Router
   ) {
-    this.TaskNotesViewModel = new TaskNotesViewModel(this.http, this.appInfo);
+    this.TaskNotesViewModel = new TaskNotesViewModel(this.http);
     this.taskNote = new TaskNotesDto();
   }
 

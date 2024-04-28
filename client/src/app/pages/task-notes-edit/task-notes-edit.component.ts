@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { TaskNotesDto } from '../../dto/taskNotes/task-notes.dto';
 import { HttpClient } from '@angular/common/http';
-import { AppInfoService } from '../../services/app-info/app-info.service';
 import { Router } from '@angular/router';
 import { TaskNotesViewModel } from '../../view-models/task-notes.viewmodel';
 import { ButtonModule } from 'primeng/button';
@@ -49,11 +48,10 @@ export class TaskNotesEditComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private appInfo: AppInfoService,
     private router: Router,
     private route: ActivatedRoute
   ) {
-    this.taskNotesViewModel = new TaskNotesViewModel(this.http, this.appInfo);
+    this.taskNotesViewModel = new TaskNotesViewModel(this.http);
 
     this.taskNote = new TaskNotesDto();
     this.taskNotes = new Array<TaskNotesDto>();
@@ -62,7 +60,7 @@ export class TaskNotesEditComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
-      if (id && this.appInfo.options) {
+      if (id) {
         this._taskNoteId = Guid.parse(id);
 
         this.taskNotesViewModel
