@@ -1,20 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { UserDto } from '../dto/users/user.dto';
 import { Guid } from 'guid-typescript';
+import { ApiService } from '../services/api/api.service';
 
 export class UserViewModel {
-  url: string;
-
-  constructor(private http: HttpClient) {
-    this.url = 'http://localhost:7028/api/';
-  }
+  constructor(private http: HttpClient, private apiService: ApiService) {}
 
   public getAllUsers() {
+    let serviceUrl = this.apiService.getService() + 'Users';
+
     let headers = {
       'Content-Type': 'application/json',
     };
-
-    let serviceUrl = this.url + 'Users';
 
     return this.http.get(serviceUrl + '/getAllUsers/', {
       headers: headers,
@@ -22,11 +19,11 @@ export class UserViewModel {
   }
 
   public getUserById(userId: Guid) {
+    let serviceUrl = this.apiService.getService() + 'Users';
+
     let headers = {
       'Content-Type': 'application/json',
     };
-
-    let serviceUrl = this.url + 'Users';
 
     return this.http.get(serviceUrl + '/getUserById/' + userId, {
       headers: headers,
@@ -34,11 +31,11 @@ export class UserViewModel {
   }
 
   public addNewUser(userDto: UserDto) {
+    let serviceUrl = this.apiService.getService() + 'Users';
+
     let headers = {
       'Content-Type': 'application/json',
     };
-
-    let serviceUrl = this.url + 'Users';
 
     return this.http.post(serviceUrl + '/addNewUser/', userDto, {
       headers: headers,
@@ -46,11 +43,11 @@ export class UserViewModel {
   }
 
   public updateUser(userDto: UserDto) {
+    let serviceUrl = this.apiService.getService() + 'Users';
+
     let headers = {
       'Content-Type': 'application/json',
     };
-
-    let serviceUrl = this.url + 'Users';
 
     return this.http.put(serviceUrl + '/updateUser/', userDto, {
       headers: headers,
@@ -58,11 +55,11 @@ export class UserViewModel {
   }
 
   public deleteUser(userId: Guid) {
+    let serviceUrl = this.apiService.getService() + 'Users';
+
     let headers = {
       'Content-Type': 'application/json',
     };
-
-    let serviceUrl = this.url + 'Users';
 
     return this.http.delete(serviceUrl + '/deleteUser/' + userId, {
       headers: headers,

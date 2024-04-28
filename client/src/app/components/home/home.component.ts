@@ -13,6 +13,7 @@ import { PasswordModule } from 'primeng/password';
 import { TableModule } from 'primeng/table';
 import { TaskNotesViewModel } from '../../view-models/task-notes.viewmodel';
 import { TaskNotesDto } from '../../dto/taskNotes/task-notes.dto';
+import { ApiService } from '../../services/api/api.service';
 
 @Component({
   selector: 'app-home',
@@ -37,9 +38,10 @@ export class HomeComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private auth: AuthService,
+    private apiService: ApiService,
     private router: Router
   ) {
-    this.TaskNotesViewModel = new TaskNotesViewModel(this.http);
+    this.TaskNotesViewModel = new TaskNotesViewModel(this.http, this.apiService);
     this.taskNote = new TaskNotesDto();
   }
 

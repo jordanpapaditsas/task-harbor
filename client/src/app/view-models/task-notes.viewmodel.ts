@@ -1,16 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { TaskNotesDto } from '../dto/taskNotes/task-notes.dto';
 import { Guid } from 'guid-typescript';
+import { ApiService } from '../services/api/api.service';
 
 export class TaskNotesViewModel {
-  url: string;
-
-  constructor(private http: HttpClient) {
-    this.url = 'http://localhost:7028/api/';
-  }
+  constructor(private http: HttpClient, private apiService: ApiService) {}
 
   public getAllTaskNotes() {
-    let serviceUrl = this.url + 'TaskNotes';
+    let serviceUrl = this.apiService.getService() + 'TaskNotes';
 
     let headers = {
       'Content-Type': 'application/json',
@@ -22,7 +19,7 @@ export class TaskNotesViewModel {
   }
 
   public getTaskNoteById(taskNoteId: Guid) {
-    let serviceUrl = this.url + 'TaskNotes';
+    let serviceUrl = this.apiService.getService() + 'TaskNotes';
 
     let headers = {
       'Content-Type': 'application/json',
@@ -34,7 +31,7 @@ export class TaskNotesViewModel {
   }
 
   public addNewTaskNote(taskNote: TaskNotesDto) {
-    let serviceUrl = this.url + 'TaskNotes';
+    let serviceUrl = this.apiService.getService() + 'TaskNotes';
 
     let headers = {
       'Content-Type': 'application/json',
@@ -46,7 +43,7 @@ export class TaskNotesViewModel {
   }
 
   public updateTaskNote(taskNote: TaskNotesDto) {
-    let serviceUrl = this.url + 'TaskNotes';
+    let serviceUrl = this.apiService.getService() + 'TaskNotes';
 
     let headers = {
       'Content-Type': 'application/json',
@@ -58,7 +55,7 @@ export class TaskNotesViewModel {
   }
 
   public deleteTaskNoteWithId(taskNoteId: Guid) {
-    let serviceUrl = this.url + 'TaskNotes';
+    let serviceUrl = this.apiService.getService() + 'TaskNotes';
 
     let headers = {
       'Content-Type': 'application/json',

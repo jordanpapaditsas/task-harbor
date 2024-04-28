@@ -13,6 +13,7 @@ import { TableModule } from 'primeng/table';
 import { ToolbarModule } from 'primeng/toolbar';
 import { TaskNotesEditComponent } from '../task-notes-edit/task-notes-edit.component';
 import { CommonModule } from '@angular/common';
+import { ApiService } from '../../services/api/api.service';
 
 @Component({
   selector: 'app-task-notes-list',
@@ -39,8 +40,8 @@ export class TaskNotesListComponent implements OnInit {
 
   taskNotesViewModel: TaskNotesViewModel;
 
-  constructor(private http: HttpClient, private router: Router) {
-    this.taskNotesViewModel = new TaskNotesViewModel(this.http);
+  constructor(private http: HttpClient, private apiService: ApiService, private router: Router) {
+    this.taskNotesViewModel = new TaskNotesViewModel(this.http, this.apiService);
 
     this.taskNote = new TaskNotesDto();
   }

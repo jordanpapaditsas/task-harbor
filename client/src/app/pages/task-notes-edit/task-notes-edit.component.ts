@@ -9,6 +9,7 @@ import { ButtonModule } from 'primeng/button';
 import { Guid } from 'guid-typescript';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../../services/api/api.service';
 
 @Component({
   selector: 'app-task-notes-edit',
@@ -48,10 +49,14 @@ export class TaskNotesEditComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
+    private apiService: ApiService,
     private router: Router,
     private route: ActivatedRoute
   ) {
-    this.taskNotesViewModel = new TaskNotesViewModel(this.http);
+    this.taskNotesViewModel = new TaskNotesViewModel(
+      this.http,
+      this.apiService
+    );
 
     this.taskNote = new TaskNotesDto();
     this.taskNotes = new Array<TaskNotesDto>();
