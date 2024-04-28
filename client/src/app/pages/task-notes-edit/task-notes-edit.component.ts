@@ -39,10 +39,6 @@ export class TaskNotesEditComponent implements OnInit {
         .getTaskNoteById(this._taskNoteId)
         .subscribe((result: any) => {
           this.taskNote = result as any;
-
-          this.taskNote.Id = result.Id;
-          this.taskNote.Name = result.Name;
-          this.taskNote.SerialNumber = result.SerialNumber;
         });
     }
   }

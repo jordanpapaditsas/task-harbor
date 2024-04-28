@@ -10,6 +10,7 @@ namespace task_harbor.Controllers
 {
     // https://localhost:xxxx/api/Tasks
     [Route("api/[controller]")]
+    [ApiController]
     public class TaskNotesController : ControllerBase
     {
         private ApplicationDbContext _context;
