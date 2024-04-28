@@ -40,8 +40,15 @@ export class TaskNotesListComponent implements OnInit {
 
   taskNotesViewModel: TaskNotesViewModel;
 
-  constructor(private http: HttpClient, private apiService: ApiService, private router: Router) {
-    this.taskNotesViewModel = new TaskNotesViewModel(this.http, this.apiService);
+  constructor(
+    private http: HttpClient,
+    private apiService: ApiService,
+    private router: Router
+  ) {
+    this.taskNotesViewModel = new TaskNotesViewModel(
+      this.http,
+      this.apiService
+    );
 
     this.taskNote = new TaskNotesDto();
   }
@@ -68,5 +75,25 @@ export class TaskNotesListComponent implements OnInit {
 
   addNewTask(e: any) {
     this.router.navigate(['tasknotes-edit']);
+  }
+
+  updateTaskNote(taskNote: TaskNotesDto) {
+    let taskNoteToUpdateId = taskNote.Id;
+
+    this.router.navigate(['tasknotes-edit', taskNoteToUpdateId]);
+  }
+
+  deleteTaskNote(taskNote: TaskNotesDto) {
+    let taskToDeleteId = taskNote.Id;
+
+    if (taskToDeleteId) {
+      this.taskNotesViewModel
+        .deleteTaskNoteWithId(taskToDeleteId)
+        .subscribe((result) => {
+          setTimeout(() => {
+            this.getAllTaskNotesData();
+          }, 300);
+        });
+    }
   }
 }

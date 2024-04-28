@@ -1,2 +1,9 @@
 <input type="text" pInputText [(ngModel)]="taskNote.Name" />
-<p-button (onClick)="addNewTask($event)">Add New Task</p-button>
+<button
+  pButton
+  pRipple
+  label="Add"
+  icon="pi pi-plus"
+  class="p-button-success mr-2"
+  (click)="addNewTask($event)"
+></button>

@@ -49,7 +49,7 @@ export class TaskNotesViewModel {
       'Content-Type': 'application/json',
     };
 
-    return this.http.post(serviceUrl + '/updateTaskNote/', taskNote, {
+    return this.http.put(serviceUrl + '/updateTaskNote/', taskNote, {
       headers: headers,
     });
   }
@@ -61,7 +61,7 @@ export class TaskNotesViewModel {
       'Content-Type': 'application/json',
     };
 
-    return this.http.post(serviceUrl + '/deleteTaskNoteWithId/', taskNoteId, {
+    return this.http.delete(serviceUrl + '/deleteTaskNoteWithId/' + taskNoteId, {
       headers: headers,
     });
   }
