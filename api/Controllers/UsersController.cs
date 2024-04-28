@@ -7,10 +7,9 @@ using task_harbor.Models;
 namespace task_harbor.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private ApplicationDbContext _context;
 
         public UsersController(ApplicationDbContext context)
         {
